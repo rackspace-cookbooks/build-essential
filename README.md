@@ -20,7 +20,7 @@ Supported platforms by platform family:
 Attributes
 ==========
 
-* `node['build_essential']['compiletime']` - Whether the resources in
+* `node['rackspace_build_essential']['compiletime']` - Whether the resources in
 the default recipe should be configured at the "Compile" phase of the
 Chef run. Defaults to false, see __Usage__ for more information.
 
@@ -40,7 +40,7 @@ compile time installation. See __Usage__ for further information.
 Usage
 =====
 
-Simply include the `build-essential` and the required tools will be
+Simply include the `rackspace_build_essential` and the required tools will be
 installed to the system, and later recipes will be able to compile
 software from C source code.
 
@@ -70,11 +70,11 @@ Example role:
 
     name "myapp"
     run_list(
-      "recipe[build-essential]",
+      "recipe[rackspace_build_essential]",
       "recipe[myapp]"
     )
     default_attributes(
-      "build_essential" => {
+      "rackspace_build_essential" => {
         "compiletime" => true
       }
     )
