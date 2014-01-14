@@ -1,5 +1,5 @@
 #
-# Cookbook Name:: build-essential
+# Cookbook Name:: rackspace_build_essential
 # Recipe:: debian
 #
 # Copyright 2008-2013, Opscode, Inc.
@@ -28,7 +28,7 @@ execute "apt-get-update-build-essentials" do
     ::File.exists?('/var/lib/apt/periodic/update-success-stamp') &&
     ::File.mtime('/var/lib/apt/periodic/update-success-stamp') > Time.now - 86400*2
   end
-end.run_action(:run) if node['build_essential']['compiletime']
+end.run_action(:run) if node['rackspace_build_essential']['compiletime']
 
 %w{
   autoconf
@@ -39,8 +39,8 @@ end.run_action(:run) if node['build_essential']['compiletime']
 }.each do |pkg|
 
   r = package pkg do
-    action( node['build_essential']['compiletime'] ? :nothing : :install )
+    action( node['rackspace_build_essential']['compiletime'] ? :nothing : :install )
   end
-  r.run_action(:install) if node['build_essential']['compiletime']
+  r.run_action(:install) if node['rackspace_build_essential']['compiletime']
 
 end
