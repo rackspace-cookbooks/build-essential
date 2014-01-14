@@ -1,5 +1,5 @@
 #
-# Cookbook Name:: build-essential
+# Cookbook Name:: rackspace_build_essential
 # Recipe:: rhel
 #
 # Copyright 2008-2013, Opscode, Inc.
@@ -37,8 +37,8 @@ end
 pkgs.flatten.each do |pkg|
 
   r = package pkg do
-    action( node['build_essential']['compiletime'] ? :nothing : :install )
+    action( node['rackspace_build_essential']['compiletime'] ? :nothing : :install )
   end
-  r.run_action(:install) if node['build_essential']['compiletime']
+  r.run_action(:install) if node['rackspace_build_essential']['compiletime']
 
 end
