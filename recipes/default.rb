@@ -1,5 +1,5 @@
 #
-# Cookbook Name:: build-essential
+# Cookbook Name:: rackspace_build_essential
 # Recipe:: default
 #
 # Copyright 2008-2009, Opscode, Inc.
@@ -19,7 +19,7 @@
 #
 
 begin
-  include_recipe "build-essential::#{node['platform_family']}"
+  include_recipe "rackspace_build_essential::#{node['platform_family']}"
 rescue Chef::Exceptions::RecipeNotFound
   Chef::Log.warn "A build-essential recipe does not exist for the platform_family: #{node['platform_family']}"
 end
