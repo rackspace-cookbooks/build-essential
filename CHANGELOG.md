@@ -2,6 +2,11 @@ build-essential Cookbook CHANGELOG
 ==================================
 This file is used to list changes made in each version of the build-essential cookbook.
 
+v2.0.0
+------
+- Rewrite for Rackspace specific environments.
+- Removed references to OS's not used within Rackspace
+
 v1.4.2
 ------
 ### Bug

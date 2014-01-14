@@ -15,26 +15,7 @@ Chef version 0.10.10+ and Ohai 0.6.12+ are required.
 Supported platforms by platform family:
 
 * debian (debian, ubuntu)
-* fedora
-* mac_os_x (10.6+)
 * rhel (centos, redhat, amazon, scientific)
-* smartos
-* solaris2
-* omnios
-
-**Note for OmniOS**: Currently, OmniOS's Ruby package is built with
-GCC 4.6.3, and the path is hardcoded, as the gcc binaries are not
-installed in the default $PATH. This means that in order to install
-RubyGems into the "system" Ruby, one must install `developer/gcc46`.
-[An issue](https://github.com/omniti-labs/omnios-build/issues/19) is
-open upstream w/ OmniOS to rebuild the Ruby package with GCC 4.7.2.
-
-## Cookbooks
-
-This cookbook suggests the following external cookbooks:
-
-* [pkgin](http://community.opscode.com/cookbooks/pkgin) (someara) - SmartOS only
-* [pkgutil](http://community.opscode.com/cookbooks/pkgutil) (marthag) - Solaris 2 only
 
 Attributes
 ==========
@@ -42,10 +23,6 @@ Attributes
 * `node['build_essential']['compiletime']` - Whether the resources in
 the default recipe should be configured at the "Compile" phase of the
 Chef run. Defaults to false, see __Usage__ for more information.
-* `node['build_essential']['osx']['gcc_installer_url']` - The URL of
-  the OS X GCC package installer (.pkg).
-* `node['build_essential']['osx']['gcc_installer_checksum']` - The
-  SHA256 checksum of the OS X GCC installer.
 
 Recipes
 =======
@@ -59,14 +36,6 @@ families), packages required to build C source projects are installed.
 This includes GCC, make, autconf and others. On Debian-family
 distributions, the apt-cache may need to be updated, especially during
 compile time installation. See __Usage__ for further information.
-
-On Mac OS X, the GCC standalone installer by Kenneth Reitz is
-installed. Note that this is *not* the Xcode CLI package, as that does
-not include all programs and headers required to build some common
-GNU-style C projects, such as those that are available from projects
-such as MacPorts or Homebrew. Changing the attributes for the GCC
-installer URL and checksum to the Xcode values may work, but this is
-untested.
 
 Usage
 =====
@@ -126,13 +95,25 @@ required headers for individual software projects in order to compile
 them, or to compile RubyGems with native C extensions. You should
 create a cookbook for handling that.
 
+Testing
+=======
+
+Pleas see testing guidelines at [contributing](https://github.com/rackspace-cookbooks/contributing/blob/master/CONTRIBUTING.md)
+
+Contributing
+============
+
+Please see contributing guidelines at [contributing](https://github.com/rackspace-cookbooks/contributing/blob/master/CONTRIBUTING.md)
+
 License and Author
 ==================
 
 Author:: Joshua Timberman (<joshua@opscode.com>)
 Author:: Seth Chisamore (<schisamo@opscode.com>)
+Author:: Jason Nelson (<jason.nelson@rackspace.com>)
 
 Copyright 2009-2011, Opscode, Inc. (<legal@opscode.com>)
+Copyright 2014, Rackspace, US Inc.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
