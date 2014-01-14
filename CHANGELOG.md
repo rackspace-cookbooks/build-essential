@@ -6,6 +6,7 @@ v2.0.0
 ------
 - Rewrite for Rackspace specific environments.
 - Removed references to OS's not used within Rackspace
+- Changed name from build_essential to rackspace_build_essential
 
 v1.4.2
 ------
