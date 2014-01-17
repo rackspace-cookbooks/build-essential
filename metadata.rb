@@ -6,6 +6,6 @@ description       "Installs C compiler / build tools"
 version           "2.0.0"
 recipe            "rackspace_build_essential", "Installs packages required for compiling C software from source."
 
-%w{ fedora redhat centos ubuntu debian }.each do |os|
+%w{ redhat centos ubuntu debian }.each do |os|
   supports os
 end
