@@ -1,3 +1,5 @@
+# encoding: UTF-8
+
 name              "rackspace_build_essential"
 maintainer        "Rackspace, US Inc."
 maintainer_email  "rackspace-cookbooks@rackspace.com"
