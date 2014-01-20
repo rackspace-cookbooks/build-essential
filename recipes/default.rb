@@ -1,3 +1,4 @@
+# encoding: UTF-8
 #
 # Cookbook Name:: rackspace_build_essential
 # Recipe:: default
@@ -19,7 +20,8 @@
 #
 
 begin
-  include_recipe "rackspace_build_essential::#{node['platform_family']}"
+  include_recipe "rackspace_build_essential::#{node[:platform_family]}"
 rescue Chef::Exceptions::RecipeNotFound
-  Chef::Log.warn "A build-essential recipe does not exist for the platform_family: #{node['platform_family']}"
+  Chef::Log.warn "A build-essential recipe does not exist for the
+                  platform_family: #{node[:platform_family]}"
 end
