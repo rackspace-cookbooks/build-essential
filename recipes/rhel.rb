@@ -31,17 +31,17 @@ pkgs = %w{
 }
 
 # ensure GCC 4 is available on older pre-6 EL
-pkgs.unshift %w{ gcc44 gcc44-c++ } if node[:platform_version].to_i < 6
+pkgs.unshift %w{ gcc44 gcc44-c++ } if node['platform_version'].to_i < 6
 
 pkgs.flatten.each do |pkg|
 
   r = package pkg do
-    if node[:rackspace_build_essential][:compiletime]
+    if node['rackspace_build_essential']['compiletime']
       action(:nothing)
     else
       action(:install)
     end
   end
-  r.run_action(:install) if node[:rackspace_build_essential][:compiletime]
+  r.run_action(:install) if node['rackspace_build_essential']['compiletime']
 
 end

@@ -18,4 +18,4 @@
 # limitations under the License.
 #
 
-default[:rackspace_build_essential][:compiletime] = false
+default['rackspace_build_essential']['compiletime'] = false

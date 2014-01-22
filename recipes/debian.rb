@@ -31,7 +31,7 @@ execute 'apt-get-update-build-essentials' do
     ::File.mtime('/var/lib/apt/periodic/update-success-stamp') >
     Time.now - 86_400 * 2
   end
-end.run_action(:run) if node[:rackspace_build_essential][:compiletime]
+end.run_action(:run) if node['rackspace_build_essential']['compiletime']
 
 %w{
   autoconf
@@ -42,12 +42,12 @@ end.run_action(:run) if node[:rackspace_build_essential][:compiletime]
 }.each do |pkg|
 
   r = package pkg do
-    if node[:rackspace_build_essential][:compiletime]
+    if node['rackspace_build_essential']['compiletime']
       action(:nothing)
     else
       action(:install)
     end
   end
-  r.run_action(:install) if node[:rackspace_build_essential][:compiletime]
+  r.run_action(:install) if node['rackspace_build_essential']['compiletime']
 
 end
