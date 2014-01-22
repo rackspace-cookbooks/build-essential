@@ -5,7 +5,7 @@ require 'spec_helper'
 describe 'rackspace_build_essential::default' do
   let(:chef_run) do
     ChefSpec::Runner.new do |node|
-      node.set[:platform_family] = 'debian'
+      node.set['platform_family'] = 'debian'
     end.converge(described_recipe)
   end
 
