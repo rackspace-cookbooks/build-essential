@@ -15,7 +15,7 @@ Chef version 0.10.10+ and Ohai 0.6.12+ are required.
 Supported platforms by platform family:
 
 * debian (debian, ubuntu)
-* rhel (centos, redhat, amazon, scientific)
+* rhel (centos, redhat)
 
 Attributes
 ==========
