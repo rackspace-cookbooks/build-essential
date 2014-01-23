@@ -1,5 +1,5 @@
 metadata
 
 group :integration do
-  cookbook "rackspace_apt", github: "rackspace-cookbooks/rackspace_apt"
+  cookbook "apt", github: "rackspace-cookbooks/apt"
 end

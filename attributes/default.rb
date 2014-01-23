@@ -1,6 +1,6 @@
 # encoding: UTF-8
 #
-# Cookbook Name:: build-essential
+# Cookbook Name:: rackspace-build_essential
 # Attributes:: default
 #
 # Copyright 2008-2012, Opscode, Inc.
