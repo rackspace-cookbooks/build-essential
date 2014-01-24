@@ -1,8 +1,10 @@
+# encoding: UTF-8
 #
-# Cookbook Name:: build-essential
+# Cookbook Name:: rackspace_build_essential
 # Recipe:: default
 #
 # Copyright 2008-2009, Opscode, Inc.
+# Copyright 2014, Rackspace, US Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -18,7 +20,8 @@
 #
 
 begin
-  include_recipe "build-essential::#{node['platform_family']}"
+  include_recipe "rackspace_build_essential::#{node['platform_family']}"
 rescue Chef::Exceptions::RecipeNotFound
-  Chef::Log.warn "A build-essential recipe does not exist for the platform_family: #{node['platform_family']}"
+  Chef::Log.warn "A build-essential recipe does not exist for the
+                  platform_family: #{node['platform_family']}"
 end
